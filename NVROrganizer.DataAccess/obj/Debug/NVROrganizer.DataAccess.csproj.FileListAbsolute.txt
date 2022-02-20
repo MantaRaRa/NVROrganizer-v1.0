@@ -1,0 +1,9 @@
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\bin\Debug\NVROrganizer.DataAccess.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\bin\Debug\NVROrganizer.DataAccess.pdb
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\bin\Debug\NVROrganizer.Model.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\bin\Debug\NVROrganizer.Model.pdb
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\obj\Debug\NVROrganizer.DataAccess.csproj.AssemblyReference.cache
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\obj\Debug\NVROrganizer.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\obj\Debug\NVROrganizer.DataAccess.csproj.CopyComplete
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\obj\Debug\NVROrganizer.DataAccess.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.DataAccess\obj\Debug\NVROrganizer.DataAccess.pdb
