@@ -1,4 +1,6 @@
-﻿using NvrOrganizer.UI.Data;
+﻿using Autofac;
+using NvrOrganizer.UI.Data;
+using NvrOrganizer.UI.Startup;
 using NvrOrganizer.UI.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -17,9 +19,10 @@ namespace NvrOrganizer.UI
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            var mainWindow = new MainWindow(
-                new MainViewModel(
-                    new NvrDataSevice()));
+            var bootstrapper = new BootStrapper();
+            var container = bootstrapper.Bootstrap();
+
+            var mainWindow = container.Resolve<MainWindow>();
             mainWindow.Show();
         }
     }
