@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace NVROrganizer.UI.ViewModel
+namespace NvrOrganizer.UI.ViewModel
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

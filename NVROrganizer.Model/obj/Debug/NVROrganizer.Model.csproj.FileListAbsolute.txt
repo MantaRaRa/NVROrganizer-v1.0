@@ -1,6 +1,6 @@
-C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.Model\bin\Debug\NVROrganizer.Model.dll
-C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.Model\bin\Debug\NVROrganizer.Model.pdb
-C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.Model\obj\Debug\NVROrganizer.Model.csproj.AssemblyReference.cache
-C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.Model\obj\Debug\NVROrganizer.Model.csproj.CoreCompileInputs.cache
-C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.Model\obj\Debug\NVROrganizer.Model.dll
-C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.Model\obj\Debug\NVROrganizer.Model.pdb
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.Model\bin\Debug\NvrOrganizer.Model.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.Model\bin\Debug\NvrOrganizer.Model.pdb
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.Model\obj\Debug\NvrOrganizer.Model.csproj.AssemblyReference.cache
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.Model\obj\Debug\NvrOrganizer.Model.csproj.CoreCompileInputs.cache
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.Model\obj\Debug\NvrOrganizer.Model.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.Model\obj\Debug\NvrOrganizer.Model.pdb

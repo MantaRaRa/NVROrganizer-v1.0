@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVROrganizer.UI", "NVROrganizer.UI.csproj", "{AB259BD3-57E1-4725-A9B9-6BF66792F132}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvrOrganizer.UI", "NvrOrganizer.UI.csproj", "{B79172F0-F40C-453B-9062-266702742227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVROrganizer.DataAccess", "..\NVROrganizer.DataAccess\NVROrganizer.DataAccess.csproj", "{162DEDCA-C7EE-4ECB-84DB-347E51C3EC4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvrOrganizer.DataAccess", "..\NvrOrganizer.DataAccess\NvrOrganizer.DataAccess.csproj", "{628003BD-70D2-4A10-9A19-C996A7620E9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVROrganizer.Model", "..\NVROrganizer.Model\NVROrganizer.Model.csproj", "{C57B0CCC-8A79-4217-870E-C698B1EC15C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvrOrganizer.Model", "..\NvrOrganizer.Model\NvrOrganizer.Model.csproj", "{0AF81BA8-048E-4A07-97BD-0CCEE73992D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AB259BD3-57E1-4725-A9B9-6BF66792F132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB259BD3-57E1-4725-A9B9-6BF66792F132}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB259BD3-57E1-4725-A9B9-6BF66792F132}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB259BD3-57E1-4725-A9B9-6BF66792F132}.Release|Any CPU.Build.0 = Release|Any CPU
-		{162DEDCA-C7EE-4ECB-84DB-347E51C3EC4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{162DEDCA-C7EE-4ECB-84DB-347E51C3EC4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{162DEDCA-C7EE-4ECB-84DB-347E51C3EC4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{162DEDCA-C7EE-4ECB-84DB-347E51C3EC4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C57B0CCC-8A79-4217-870E-C698B1EC15C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C57B0CCC-8A79-4217-870E-C698B1EC15C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C57B0CCC-8A79-4217-870E-C698B1EC15C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C57B0CCC-8A79-4217-870E-C698B1EC15C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79172F0-F40C-453B-9062-266702742227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79172F0-F40C-453B-9062-266702742227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79172F0-F40C-453B-9062-266702742227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79172F0-F40C-453B-9062-266702742227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628003BD-70D2-4A10-9A19-C996A7620E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628003BD-70D2-4A10-9A19-C996A7620E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628003BD-70D2-4A10-9A19-C996A7620E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628003BD-70D2-4A10-9A19-C996A7620E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF81BA8-048E-4A07-97BD-0CCEE73992D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF81BA8-048E-4A07-97BD-0CCEE73992D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF81BA8-048E-4A07-97BD-0CCEE73992D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF81BA8-048E-4A07-97BD-0CCEE73992D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CAD1C523-A168-41E4-9319-22E1DA10B087}
+		SolutionGuid = {6091A20A-94B3-4270-A237-7670501C72CF}
 	EndGlobalSection
 EndGlobal

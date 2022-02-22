@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NVROrganizer.UI.Properties
+namespace NvrOrganizer.UI.Properties
 {
 
 

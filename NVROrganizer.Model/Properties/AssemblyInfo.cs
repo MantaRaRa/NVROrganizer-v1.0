@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NVROrganizer.Model")]
+[assembly: AssemblyTitle("NvrOrganizer.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NVROrganizer.Model")]
+[assembly: AssemblyProduct("NvrOrganizer.Model")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c57b0ccc-8a79-4217-870e-c698b1ec15c2")]
+[assembly: Guid("0af81ba8-048e-4a07-97bd-0ccee73992d1")]
 
 // Version information for an assembly consists of the following four values:
 //

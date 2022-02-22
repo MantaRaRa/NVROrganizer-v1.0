@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB259BD3-57E1-4725-A9B9-6BF66792F132}</ProjectGuid>
+    <ProjectGuid>{B79172F0-F40C-453B-9062-266702742227}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NVROrganizer.UI</RootNamespace>
-    <AssemblyName>NVROrganizer.UI</AssemblyName>
+    <RootNamespace>NvrOrganizer.UI</RootNamespace>
+    <AssemblyName>NvrOrganizer.UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,17 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,8 +65,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\INvrDataService.cs" />
-    <Compile Include="Data\NvrDataService.cs" />
+    <Compile Include="Data\INvrDataSevice.cs" />
+    <Compile Include="Data\NvrDataSevice.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -99,7 +90,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,14 +99,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NVROrganizer.DataAccess\NVROrganizer.DataAccess.csproj">
-      <Project>{162dedca-c7ee-4ecb-84db-347e51c3ec4b}</Project>
-      <Name>NVROrganizer.DataAccess</Name>
+    <ProjectReference Include="..\NvrOrganizer.DataAccess\NvrOrganizer.DataAccess.csproj">
+      <Project>{628003bd-70d2-4a10-9a19-c996a7620e9a}</Project>
+      <Name>NvrOrganizer.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NVROrganizer.Model\NVROrganizer.Model.csproj">
-      <Project>{c57b0ccc-8a79-4217-870e-c698b1ec15c2}</Project>
-      <Name>NVROrganizer.Model</Name>
+    <ProjectReference Include="..\NvrOrganizer.Model\NvrOrganizer.Model.csproj">
+      <Project>{0af81ba8-048e-4a07-97bd-0ccee73992d1}</Project>
+      <Name>NvrOrganizer.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

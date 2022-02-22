@@ -1,15 +1,15 @@
-﻿using NVROrganizer.Model;
-using NVROrganizer.UI.Data;
+﻿using NvrOrganizer.Model;
+using NvrOrganizer.UI.Data;
 using System.Collections.ObjectModel;
 
-namespace NVROrganizer.UI.ViewModel
+namespace NvrOrganizer.UI.ViewModel
 {
-    public class MainViewModel:ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
-        private INvrDataService _nvrDataService;
+        private INvrDataSevice _nvrDataService;
         private Nvr _selectedNvr;
-                
-        public MainViewModel(INvrDataService nvrDataService)
+
+        public MainViewModel(INvrDataSevice nvrDataService)
         {
             Nvrs = new ObservableCollection<Nvr>();
             _nvrDataService = nvrDataService;
@@ -18,7 +18,9 @@ namespace NVROrganizer.UI.ViewModel
         public void Load()
         {
             var nvrs = _nvrDataService.GetAll();
+
             Nvrs.Clear();
+
             foreach (var nvr in nvrs)
             {
                 Nvrs.Add(nvr);
@@ -26,17 +28,16 @@ namespace NVROrganizer.UI.ViewModel
         }
 
         public ObservableCollection<Nvr> Nvrs { get; set; }
-                
+
         public Nvr SelectedNvr
         {
             get { return _selectedNvr; }
-            set 
-            { _selectedNvr = value;
-            OnPropertyChanged();
+            set
+            {
+                _selectedNvr = value;
+                OnPropertyChanged();
             }
-            
         }
-
-        
+                    
     }
 }
