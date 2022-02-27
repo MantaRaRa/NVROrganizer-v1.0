@@ -36,3 +36,6 @@ C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\bin\Debug\System.Mem
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\EntityFramework.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\NvrOrganizer.DataAccess.dll.config
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\EntityFramework.xml
