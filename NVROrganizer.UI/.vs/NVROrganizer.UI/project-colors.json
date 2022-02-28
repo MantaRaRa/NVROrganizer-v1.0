@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "628003bd-70d2-4a10-9a19-c996a7620e9a": {
+      "ProjectGuid": "628003bd-70d2-4a10-9a19-c996a7620e9a",
+      "DisplayName": "NvrOrganizer.DataAccess",
+      "ColorIndex": 0
+    },
+    "0af81ba8-048e-4a07-97bd-0ccee73992d1": {
+      "ProjectGuid": "0af81ba8-048e-4a07-97bd-0ccee73992d1",
+      "DisplayName": "NvrOrganizer.Model",
+      "ColorIndex": 1
+    },
+    "b79172f0-f40c-453b-9062-266702742227": {
+      "ProjectGuid": "b79172f0-f40c-453b-9062-266702742227",
+      "DisplayName": "NvrOrganizer.UI",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

@@ -1,17 +1,25 @@
-﻿using NvrOrganizer.Model;
+﻿using NvrOrganizer.DataAccess;
+using NvrOrganizer.Model;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NvrOrganizer.UI.Data
 {
     public class NvrDataSevice : INvrDataSevice
     {
+        private Func<NvrOrganizerDbContext> _contextCreator;
+
+        public NvrDataSevice(Func<NvrOrganizerDbContext> contextCreator )
+        {
+            _contextCreator = contextCreator;
+        }
         public IEnumerable<Nvr> GetAll()
         {
-            // ToDo: Load data from real DataBase
-            yield return new Nvr { FirstName = "GoTime4", LastName = "Winchester" };
-            yield return new Nvr { FirstName = "DoubleKwik", LastName = "Isom" };
-            yield return new Nvr { FirstName = "HT", LastName = "Hackney" };
-            yield return new Nvr { FirstName = "PCCEK", LastName = "Vicco 2" };
+          using(var ctx = _contextCreator())
+            {
+                return ctx.Nvrs.AsNoTracking().ToList();
+            }
         }
     }
 }
