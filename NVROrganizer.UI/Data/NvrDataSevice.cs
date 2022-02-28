@@ -2,7 +2,9 @@
 using NvrOrganizer.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NvrOrganizer.UI.Data
 {
@@ -14,11 +16,11 @@ namespace NvrOrganizer.UI.Data
         {
             _contextCreator = contextCreator;
         }
-        public IEnumerable<Nvr> GetAll()
+        public async Task<List<Nvr>> GetAllAsync()
         {
-          using(var ctx = _contextCreator())
+          using (var ctx = _contextCreator())
             {
-                return ctx.Nvrs.AsNoTracking().ToList();
+                return await ctx.Nvrs.AsNoTracking().ToListAsync();
             }
         }
     }

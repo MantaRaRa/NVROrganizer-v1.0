@@ -1,6 +1,7 @@
 ﻿using NvrOrganizer.Model;
 using NvrOrganizer.UI.Data;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace NvrOrganizer.UI.ViewModel
 {
@@ -15,9 +16,9 @@ namespace NvrOrganizer.UI.ViewModel
             _nvrDataService = nvrDataService;
         }
 
-        public void Load()
+        public async Task LoadAsync()
         {
-            var nvrs = _nvrDataService.GetAll();
+            var nvrs = await _nvrDataService.GetAllAsync();
 
             Nvrs.Clear();
 
