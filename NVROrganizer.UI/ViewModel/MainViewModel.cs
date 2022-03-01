@@ -7,38 +7,16 @@ namespace NvrOrganizer.UI.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        private INvrDataSevice _nvrDataService;
-        private Nvr _selectedNvr;
-
-        public MainViewModel(INvrDataSevice nvrDataService)
+        public MainViewModel(INavigationViewModel navigationViewModel)
         {
-            Nvrs = new ObservableCollection<Nvr>();
-            _nvrDataService = nvrDataService;
+          NavigationViewModel = navigationViewModel;
         }
 
         public async Task LoadAsync()
         {
-            var nvrs = await _nvrDataService.GetAllAsync();
-
-            Nvrs.Clear();
-
-            foreach (var nvr in nvrs)
-            {
-                Nvrs.Add(nvr);
-            }
+         await NavigationViewModel.LoadAsync();
         }
 
-        public ObservableCollection<Nvr> Nvrs { get; set; }
-
-        public Nvr SelectedNvr
-        {
-            get { return _selectedNvr; }
-            set
-            {
-                _selectedNvr = value;
-                OnPropertyChanged();
-            }
-        }
-                    
+        public INavigationViewModel NavigationViewModel { get; }            
     }
 }
