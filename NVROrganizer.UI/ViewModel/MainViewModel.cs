@@ -1,22 +1,24 @@
-﻿using NvrOrganizer.Model;
-using NvrOrganizer.UI.Data;
-using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace NvrOrganizer.UI.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        public MainViewModel(INavigationViewModel navigationViewModel)
+        public MainViewModel(INavigationViewModel navigationViewModel,
+            INvrDetailViewModel nvrDetailViewModel)
         {
-          NavigationViewModel = navigationViewModel;
+            NavigationViewModel = navigationViewModel;
         }
-
         public async Task LoadAsync()
         {
-         await NavigationViewModel.LoadAsync();
+            await NavigationViewModel.LoadAsync();
         }
+        public INavigationViewModel NavigationViewModel { get; }
 
-        public INavigationViewModel NavigationViewModel { get; }            
+        public INvrDetailViewModel NvrDetailViewModel { get; }
     }
 }

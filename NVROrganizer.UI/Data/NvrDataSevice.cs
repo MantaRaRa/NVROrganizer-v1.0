@@ -16,11 +16,11 @@ namespace NvrOrganizer.UI.Data
         {
             _contextCreator = contextCreator;
         }
-        public async Task<List<Nvr>> GetAllAsync()
+        public async Task<Nvr> GetByIdAsync(int nvrId)
         {
           using (var ctx = _contextCreator())
             {
-                return await ctx.Nvrs.AsNoTracking().ToListAsync();
+                return await ctx.Nvrs.AsNoTracking().SingleAsync(n => n.Id == nvrId);
             }
         }
     }

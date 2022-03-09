@@ -22,7 +22,7 @@ namespace NvrOrganizer.UI.Data
             using (var ctx = _contextCreator())
             {
                 return await ctx.Nvrs.AsNoTracking()
-                    .Select(n =>
+                    .Select(n=>
                     new LookupItem
                     {
                         Id = n.Id,

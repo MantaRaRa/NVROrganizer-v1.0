@@ -6,6 +6,6 @@ namespace NvrOrganizer.UI.Data
 {
     public interface INvrDataSevice
     {
-        Task<List<Nvr>> GetAllAsync();
+        Task<Nvr> GetByIdAsync(int nvrId);
     }
 }
