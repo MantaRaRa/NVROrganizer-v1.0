@@ -12,6 +12,7 @@ namespace NvrOrganizer.UI.ViewModel
             INvrDetailViewModel nvrDetailViewModel)
         {
             NavigationViewModel = navigationViewModel;
+            NvrDetailViewModel = nvrDetailViewModel;
         }
         public async Task LoadAsync()
         {
