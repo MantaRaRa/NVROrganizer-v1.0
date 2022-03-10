@@ -23,5 +23,15 @@ namespace NvrOrganizer.UI.Data
                 return await ctx.Nvrs.AsNoTracking().SingleAsync(n => n.Id == nvrId);
             }
         }
+
+        public async Task SaveAsync(Nvr nvr)
+        {
+            using (var ctx = _contextCreator())
+            {
+              ctx.Nvrs.Attach(nvr);
+               ctx.Entry(nvr).State = EntityState.Modified;
+               await ctx.SaveChangesAsync();
+            }
+        }
     }
 }

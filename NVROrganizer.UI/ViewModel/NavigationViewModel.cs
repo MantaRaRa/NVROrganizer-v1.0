@@ -4,6 +4,7 @@ using NvrOrganizer.UI.Event;
 using Prism.Events;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NvrOrganizer.UI.ViewModel
@@ -15,12 +16,17 @@ namespace NvrOrganizer.UI.ViewModel
 
         public NavigationViewModel(INvrLookupDataService nvrLookupService,
             IEventAggregator eventAggregator)
-    
-
         {
             _nvrLookupService = nvrLookupService;
             _eventAggregator = eventAggregator;
-            Nvrs = new ObservableCollection<LookupItem>();
+            Nvrs = new ObservableCollection<NavigationItemViewModel>();
+            _eventAggregator.GetEvent<AfterNvrSavedEvent>().Subscribe(AfterNvrSaved);
+        }
+
+        private void AfterNvrSaved(AfterNvrSavedEventArgs obj)
+        {
+            var lookupItem = Nvrs.Single(l => l.Id == obj.Id);
+            lookupItem.DisplayMember = obj.DisplayMember;
         }
 
         public async Task LoadAsync()
@@ -29,14 +35,14 @@ namespace NvrOrganizer.UI.ViewModel
             Nvrs.Clear();
             foreach (var item in lookup)
             {
-                Nvrs.Add(item);
+                Nvrs.Add(new NavigationItemViewModel(item.Id,item.DisplayMember));
             }
         }
-        public ObservableCollection<LookupItem> Nvrs { get; }
+        public ObservableCollection<NavigationItemViewModel> Nvrs { get; }
 
-        private LookupItem _selectedNvr;
+        private NavigationItemViewModel _selectedNvr;
 
-        public LookupItem SelectedNvr
+        public NavigationItemViewModel SelectedNvr
         {
             get { return _selectedNvr; }
             set 
