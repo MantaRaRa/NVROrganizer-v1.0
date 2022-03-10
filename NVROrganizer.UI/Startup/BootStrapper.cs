@@ -2,6 +2,7 @@
 using NvrOrganizer.DataAccess;
 using NvrOrganizer.UI.Data;
 using NvrOrganizer.UI.ViewModel;
+using Prism.Events;
 
 namespace NvrOrganizer.UI.Startup
 {
@@ -10,6 +11,8 @@ namespace NvrOrganizer.UI.Startup
         public IContainer Bootstrap()
         {
             var builder = new ContainerBuilder();
+
+            builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
 
             builder.RegisterType<NvrOrganizerDbContext>().AsSelf();
 

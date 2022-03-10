@@ -46,3 +46,6 @@ C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\obj\Debug\GeneratedI
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\obj\Debug\View\NavigationView.baml
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NvrOrganizer.UI\obj\Debug\View\NvrDetailView.g.cs
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\obj\Debug\View\NvrDetailView.baml
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\Prism.dll
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\Prism.pdb
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\Prism.xml
