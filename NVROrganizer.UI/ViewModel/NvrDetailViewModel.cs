@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System;
 using System.Windows.Input;
 using Prism.Commands;
+using NvrOrganizer.UI.Wrapper;
 
 namespace NvrOrganizer.UI.ViewModel
 {
@@ -13,6 +14,7 @@ namespace NvrOrganizer.UI.ViewModel
     {
         private INvrDataSevice _dataService;
         private IEventAggregator _eventAggregator;
+        private NvrWrapper _nvr;
 
         public NvrDetailViewModel(INvrDataSevice dataService, 
             IEventAggregator eventAggregator)
@@ -26,6 +28,26 @@ namespace NvrOrganizer.UI.ViewModel
             SaveCommand = new DelegateCommand(OnSaveExecute, OnSaveCanExecute); 
          }
 
+        public async Task LoadAsync(int nvrId)
+        {
+            var nvr = await _dataService.GetByIdAsync(nvrId);
+
+            Nvr = new NvrWrapper(nvr);
+        }
+
+        public NvrWrapper Nvr
+        {
+            get { return _nvr; }
+            private set
+            {
+                _nvr = value;
+                OnPropertyChanged();
+            }
+
+        }
+
+        public ICommand SaveCommand { get; }
+
         private bool OnSaveCanExecute()
         {
             //ToDo: Check if Nvr is Valid
@@ -34,7 +56,7 @@ namespace NvrOrganizer.UI.ViewModel
 
         private async void OnSaveExecute()
         {
-          await _dataService.SaveAsync(Nvr);
+          await _dataService.SaveAsync(Nvr.Model);
             _eventAggregator.GetEvent<AfterNvrSavedEvent>().Publish(
                 new AfterNvrSavedEventArgs
                 {
@@ -48,23 +70,6 @@ namespace NvrOrganizer.UI.ViewModel
            await LoadAsync(nvrId);
         }
 
-        public async Task LoadAsync(int nvrId)
-        {
-            Nvr = await _dataService.GetByIdAsync(nvrId);
-        }
-
-        private Nvr _nvr;
-
-        public Nvr Nvr
-        {
-            get { return _nvr; }
-            private set
-            {
-                _nvr = value;
-                OnPropertyChanged();
-            }
-
-        }
-        public ICommand SaveCommand { get;}
+       
     }
 }

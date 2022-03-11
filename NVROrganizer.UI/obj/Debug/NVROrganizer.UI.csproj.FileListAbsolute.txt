@@ -49,3 +49,4 @@ C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\obj\Debug\View\NvrDe
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\Prism.dll
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\Prism.pdb
 C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\bin\Debug\Prism.xml
+C:\Users\vvanmany\Desktop\Repos\NVRDataBase\NVROrganizer.UI\obj\Debug\App.baml
