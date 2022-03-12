@@ -28,7 +28,7 @@
                 Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
 
         <Label Grid.Row="4" Content="NVR Info" Margin="10 0"/>
-        <TextBox Grid.Row="5" Text="{Binding Nvr.NvrInfo,
+        <TextBox Grid.Row="5" Text="{Binding Nvr.NvrInfo, //(TargetNullValue='')
                 Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
 
         <StackPanel Grid.Row="7" Orientation="Horizontal">
