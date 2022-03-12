@@ -21,7 +21,6 @@ namespace NvrOrganizer.UI.ViewModel
         {
             _dataService = dataService;
             _eventAggregator = eventAggregator;
-
             _eventAggregator.GetEvent<OpenNvrDetailViewEvent>()
                 .Subscribe(OnOpenNvrDetailView);
 
@@ -33,6 +32,14 @@ namespace NvrOrganizer.UI.ViewModel
             var nvr = await _dataService.GetByIdAsync(nvrId);
 
             Nvr = new NvrWrapper(nvr);
+            Nvr.PropertyChanged += (s, e) =>
+              {
+                if(e.PropertyName == nameof(Nvr.HasErrors))
+                  {
+                      ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
+                  }
+              };
+            ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
         }
 
         public NvrWrapper Nvr
@@ -50,8 +57,8 @@ namespace NvrOrganizer.UI.ViewModel
 
         private bool OnSaveCanExecute()
         {
-            //ToDo: Check if Nvr is Valid
-            return true;
+            //ToDo: Check in addition if Nvr has changes
+            return Nvr!=null && !Nvr.HasErrors;
         }
 
         private async void OnSaveExecute()
