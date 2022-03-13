@@ -16,14 +16,14 @@ namespace NvrOrganizer.UI.ViewModel
         private INvrRepository _nvrRepository;
         private IEventAggregator _eventAggregator;
         private NvrWrapper _nvr;
+        private bool _hasChanges;
 
         public NvrDetailViewModel(INvrRepository nvrRepository, 
             IEventAggregator eventAggregator)
         {
             _nvrRepository = nvrRepository;
             _eventAggregator = eventAggregator;
-            _eventAggregator.GetEvent<OpenNvrDetailViewEvent>()
-                .Subscribe(OnOpenNvrDetailView);
+           
 
             SaveCommand = new DelegateCommand(OnSaveExecute, OnSaveCanExecute); 
          }
@@ -35,7 +35,11 @@ namespace NvrOrganizer.UI.ViewModel
             Nvr = new NvrWrapper(nvr);
             Nvr.PropertyChanged += (s, e) =>
               {
-                if(e.PropertyName == nameof(Nvr.HasErrors))
+                  if (!HasChanges)
+                  {
+                      HasChanges = _nvrRepository.HasChanges();
+                  }
+                  if(e.PropertyName == nameof(Nvr.HasErrors))
                   {
                       ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
                   }
@@ -54,17 +58,27 @@ namespace NvrOrganizer.UI.ViewModel
 
         }
 
-        public ICommand SaveCommand { get; }
-
-        private bool OnSaveCanExecute()
+        public bool HasChanges
         {
-            //ToDo: Check in addition if Nvr has changes
-            return Nvr!=null && !Nvr.HasErrors;
+            get { return _hasChanges; }
+            set
+            {
+                if (_hasChanges != value)
+                {
+                    _hasChanges = value;
+                    OnPropertyChanged();
+                    ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
+                }
+            }
         }
+
+
+        public ICommand SaveCommand { get; }
 
         private async void OnSaveExecute()
         {
           await _nvrRepository.SaveAsync();
+            HasChanges = _nvrRepository.HasChanges();
             _eventAggregator.GetEvent<AfterNvrSavedEvent>().Publish(
                 new AfterNvrSavedEventArgs
                 {
@@ -73,11 +87,10 @@ namespace NvrOrganizer.UI.ViewModel
                 });
         }
 
-        private async void OnOpenNvrDetailView(int nvrId)
+        private bool OnSaveCanExecute()
         {
-           await LoadAsync(nvrId);
+            return Nvr != null && !Nvr.HasErrors && HasChanges;
         }
 
-       
     }
 }
