@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using NvrOrganizer.DataAccess;
-using NvrOrganizer.UI.Data;
+using NvrOrganizer.UI.Data.Lookups;
+using NvrOrganizer.UI.Data.Repositories;
 using NvrOrganizer.UI.ViewModel;
 using Prism.Events;
 
@@ -22,7 +23,7 @@ namespace NvrOrganizer.UI.Startup
             builder.RegisterType<NvrDetailViewModel>().As<INvrDetailViewModel>();
 
             builder.RegisterType<LookupDataService>().AsImplementedInterfaces();
-            builder.RegisterType<NvrDataSevice>().As<INvrDataSevice>();
+            builder.RegisterType<NvrRepository>().As<INvrRepository>();
 
             return builder.Build();
         }

@@ -7,19 +7,20 @@ using System;
 using System.Windows.Input;
 using Prism.Commands;
 using NvrOrganizer.UI.Wrapper;
+using NvrOrganizer.UI.Data.Repositories;
 
 namespace NvrOrganizer.UI.ViewModel
 {
     public class NvrDetailViewModel : ViewModelBase, INvrDetailViewModel
     {
-        private INvrDataSevice _dataService;
+        private INvrRepository _nvrRepository;
         private IEventAggregator _eventAggregator;
         private NvrWrapper _nvr;
 
-        public NvrDetailViewModel(INvrDataSevice dataService, 
+        public NvrDetailViewModel(INvrRepository nvrRepository, 
             IEventAggregator eventAggregator)
         {
-            _dataService = dataService;
+            _nvrRepository = nvrRepository;
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OpenNvrDetailViewEvent>()
                 .Subscribe(OnOpenNvrDetailView);
@@ -29,7 +30,7 @@ namespace NvrOrganizer.UI.ViewModel
 
         public async Task LoadAsync(int nvrId)
         {
-            var nvr = await _dataService.GetByIdAsync(nvrId);
+            var nvr = await _nvrRepository.GetByIdAsync(nvrId);
 
             Nvr = new NvrWrapper(nvr);
             Nvr.PropertyChanged += (s, e) =>
@@ -63,7 +64,7 @@ namespace NvrOrganizer.UI.ViewModel
 
         private async void OnSaveExecute()
         {
-          await _dataService.SaveAsync(Nvr.Model);
+          await _nvrRepository.SaveAsync();
             _eventAggregator.GetEvent<AfterNvrSavedEvent>().Publish(
                 new AfterNvrSavedEventArgs
                 {

@@ -1,0 +1,12 @@
+﻿using NvrOrganizer.Model;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace NvrOrganizer.UI.Data.Repositories
+{
+    public interface INvrRepository
+    {
+        Task<Nvr> GetByIdAsync(int nvrId);
+        Task SaveAsync();
+    }
+}

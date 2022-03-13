@@ -93,8 +93,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Data\INvrLookupDataService.cs" />
-    <Compile Include="Data\LookupDataService.cs" />
+    <Compile Include="Data\Lookups\INvrLookupDataService.cs" />
+    <Compile Include="Data\Lookups\LookupDataService.cs" />
     <Compile Include="Event\AfterNvrSavedEvent.cs" />
     <Compile Include="Event\OpenNvrDetailViewEvent.cs" />
     <Compile Include="Startup\BootStrapper.cs" />
@@ -122,8 +122,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\INvrDataSevice.cs" />
-    <Compile Include="Data\NvrDataSevice.cs" />
+    <Compile Include="Data\Repositories\INvrRepository.cs" />
+    <Compile Include="Data\Repositories\NvrRepository.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -1,5 +1,6 @@
 ﻿using NvrOrganizer.Model;
 using NvrOrganizer.UI.Data;
+using NvrOrganizer.UI.Data.Lookups;
 using NvrOrganizer.UI.Event;
 using Prism.Events;
 using System;
