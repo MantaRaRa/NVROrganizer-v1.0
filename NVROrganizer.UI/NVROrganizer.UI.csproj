@@ -111,6 +111,8 @@
     <Compile Include="View\NvrDetailView.xaml.cs">
       <DependentUpon>NvrDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Services\IMessageDialogService.cs" />
+    <Compile Include="View\Services\MessageDialogService.cs" />
     <Compile Include="Wrapper\ModelWrapper.cs" />
     <Compile Include="Wrapper\NotifyDataErrorInfoBase.cs" />
     <Compile Include="Wrapper\NvrWrapper.cs" />

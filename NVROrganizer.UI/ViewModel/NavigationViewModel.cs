@@ -36,27 +36,10 @@ namespace NvrOrganizer.UI.ViewModel
             Nvrs.Clear();
             foreach (var item in lookup)
             {
-                Nvrs.Add(new NavigationItemViewModel(item.Id,item.DisplayMember));
+                Nvrs.Add(new NavigationItemViewModel(item.Id,item.DisplayMember,
+                    _eventAggregator));
             }
         }
         public ObservableCollection<NavigationItemViewModel> Nvrs { get; }
-
-        private NavigationItemViewModel _selectedNvr;
-
-        public NavigationItemViewModel SelectedNvr
-        {
-            get { return _selectedNvr; }
-            set 
-            { 
-                _selectedNvr = value;
-                OnPropertyChanged();
-                if(_selectedNvr!= null)
-                {
-                    _eventAggregator.GetEvent<OpenNvrDetailViewEvent>()
-                        .Publish(_selectedNvr.Id);
-                }
-            }
-        }
-        
     }
 }
