@@ -2,7 +2,7 @@
 
 namespace NvrOrganizer.UI.Event
 {
-    public class OpenNvrDetailViewEvent:PubSubEvent<int>
+    public class OpenNvrDetailViewEvent:PubSubEvent<int?>
     {
     }
 }

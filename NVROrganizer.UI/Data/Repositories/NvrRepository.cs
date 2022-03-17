@@ -18,6 +18,12 @@ namespace NvrOrganizer.UI.Data.Repositories
         {
             _context = context;
         }
+
+        public void Add(Nvr nvr)
+        {
+            _context.Nvrs.Add(nvr);
+        }
+
         public async Task<Nvr> GetByIdAsync(int nvrId)
         {
             return await _context.Nvrs.SingleAsync(n => n.Id == nvrId);

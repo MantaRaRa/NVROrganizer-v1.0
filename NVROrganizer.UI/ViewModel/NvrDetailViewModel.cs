@@ -28,9 +28,11 @@ namespace NvrOrganizer.UI.ViewModel
             SaveCommand = new DelegateCommand(OnSaveExecute, OnSaveCanExecute); 
          }
 
-        public async Task LoadAsync(int nvrId)
+        public async Task LoadAsync(int? nvrId)
         {
-            var nvr = await _nvrRepository.GetByIdAsync(nvrId);
+            var nvr =  nvrId.HasValue
+               ? await _nvrRepository.GetByIdAsync(nvrId.Value)
+               : CreateNewNvr();
 
             Nvr = new NvrWrapper(nvr);
             Nvr.PropertyChanged += (s, e) =>
@@ -90,6 +92,13 @@ namespace NvrOrganizer.UI.ViewModel
         private bool OnSaveCanExecute()
         {
             return Nvr != null && !Nvr.HasErrors && HasChanges;
+        }
+
+        private Nvr CreateNewNvr()
+        {
+           var nvr = new Nvr();
+            _nvrRepository.Add(nvr);
+            return nvr;
         }
 
     }

@@ -1,8 +1,10 @@
 ﻿using NvrOrganizer.UI.Event;
 using NvrOrganizer.UI.View.Services;
+using Prism.Commands;
 using Prism.Events;
 using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NvrOrganizer.UI.ViewModel
 {
@@ -25,12 +27,15 @@ namespace NvrOrganizer.UI.ViewModel
             _eventAggregator.GetEvent<OpenNvrDetailViewEvent>()
                .Subscribe(OnOpenNvrDetailView);
 
+            CreateNewNvrCommand = new DelegateCommand(OnCreateNewNvrExecute);
+
             NavigationViewModel = navigationViewModel;
         }
         public async Task LoadAsync()
         {
             await NavigationViewModel.LoadAsync();
         }
+        public ICommand CreateNewNvrCommand { get; }
                 
         public INavigationViewModel NavigationViewModel { get; }
                 
@@ -45,7 +50,7 @@ namespace NvrOrganizer.UI.ViewModel
         }
 
 
-        private async void OnOpenNvrDetailView(int nvrId)
+        private async void OnOpenNvrDetailView(int? nvrId)
         {
             if(NvrDetailViewModel!=null && NvrDetailViewModel.HasChanges)
             {
@@ -58,6 +63,11 @@ namespace NvrOrganizer.UI.ViewModel
             }
             NvrDetailViewModel=_nvrDetailViewModelCreator();
             await NvrDetailViewModel.LoadAsync(nvrId);
+        }
+
+        private void OnCreateNewNvrExecute()
+        {
+            OnOpenNvrDetailView(null);
         }
     }
 }

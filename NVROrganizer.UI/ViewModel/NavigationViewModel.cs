@@ -26,7 +26,17 @@ namespace NvrOrganizer.UI.ViewModel
 
         private void AfterNvrSaved(AfterNvrSavedEventArgs obj)
         {
-            var lookupItem = Nvrs.Single(l => l.Id == obj.Id);
+            var lookupItem = Nvrs.SingleOrDefault(l => l.Id == obj.Id);
+            if (lookupItem == null)
+            {
+                Nvrs.Add(new NavigationItemViewModel(obj.Id, obj.DisplayMember,
+                    _eventAggregator));
+            }
+            else
+            {
+                lookupItem.DisplayMember = obj.DisplayMember;
+            }
+
             lookupItem.DisplayMember = obj.DisplayMember;
         }
 

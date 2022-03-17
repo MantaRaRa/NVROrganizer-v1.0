@@ -8,11 +8,23 @@
         mc:Ignorable="d"
         Title="NVR Organizer" Height="450" Width="800" FontSize="20">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <View:NavigationView DataContext="{Binding NavigationViewModel}"/>
-        <View:NvrDetailView Grid.Column="1" DataContext="{Binding NvrDetailViewModel}"/>
+        <Menu Grid.ColumnSpan="2" FontSize="20">
+            <MenuItem Header="Create">
+                <MenuItem Header="New NVR" Command="{Binding CreateNewNvrCommand}"/>
+            </MenuItem>
+        </Menu>
+        <View:NavigationView Grid.Row="1"
+                             DataContext="{Binding NavigationViewModel}"/>
+        <View:NvrDetailView Grid.Row="1" 
+                            Grid.Column="1"
+                            DataContext="{Binding NvrDetailViewModel}"/>
     </Grid>
 </Window>

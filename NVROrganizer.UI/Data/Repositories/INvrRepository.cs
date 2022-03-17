@@ -9,5 +9,6 @@ namespace NvrOrganizer.UI.Data.Repositories
         Task<Nvr> GetByIdAsync(int nvrId);
         Task SaveAsync();
         bool HasChanges();
+        void Add(Nvr nvr);
     }
 }

@@ -4,7 +4,7 @@ namespace NvrOrganizer.UI.ViewModel
 {
     public interface INvrDetailViewModel
     {
-        Task LoadAsync(int nvrId);
+        Task LoadAsync(int? nvrId);
         bool HasChanges { get; }
     }
 }
