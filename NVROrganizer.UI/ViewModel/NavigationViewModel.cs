@@ -22,6 +22,29 @@ namespace NvrOrganizer.UI.ViewModel
             _eventAggregator = eventAggregator;
             Nvrs = new ObservableCollection<NavigationItemViewModel>();
             _eventAggregator.GetEvent<AfterNvrSavedEvent>().Subscribe(AfterNvrSaved);
+            _eventAggregator.GetEvent<AfterNvrDeleteEvent>().Subscribe(AfterNvrDeleted);
+
+        }
+       
+        public async Task LoadAsync()
+        {
+            var lookup = await _nvrLookupService.GetNvrLookupAsync();
+            Nvrs.Clear();
+            foreach (var item in lookup)
+            {
+                Nvrs.Add(new NavigationItemViewModel(item.Id,item.DisplayMember,
+                    _eventAggregator));
+            }
+        }
+        public ObservableCollection<NavigationItemViewModel> Nvrs { get; }
+
+        private void AfterNvrDeleted(int nvrId)
+        {
+            var nvr = Nvrs.SingleOrDefault(n => n.Id == nvrId);
+            if (nvr != null)
+            {
+                Nvrs.Remove(nvr);
+            }
         }
 
         private void AfterNvrSaved(AfterNvrSavedEventArgs obj)
@@ -37,19 +60,6 @@ namespace NvrOrganizer.UI.ViewModel
                 lookupItem.DisplayMember = obj.DisplayMember;
             }
 
-            lookupItem.DisplayMember = obj.DisplayMember;
         }
-
-        public async Task LoadAsync()
-        {
-            var lookup = await _nvrLookupService.GetNvrLookupAsync();
-            Nvrs.Clear();
-            foreach (var item in lookup)
-            {
-                Nvrs.Add(new NavigationItemViewModel(item.Id,item.DisplayMember,
-                    _eventAggregator));
-            }
-        }
-        public ObservableCollection<NavigationItemViewModel> Nvrs { get; }
     }
 }

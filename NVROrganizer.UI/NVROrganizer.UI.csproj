@@ -95,6 +95,7 @@
     </ApplicationDefinition>
     <Compile Include="Data\Lookups\INvrLookupDataService.cs" />
     <Compile Include="Data\Lookups\LookupDataService.cs" />
+    <Compile Include="Event\AfterNvrDeleteEvent.cs" />
     <Compile Include="Event\AfterNvrSavedEvent.cs" />
     <Compile Include="Event\OpenNvrDetailViewEvent.cs" />
     <Compile Include="Startup\BootStrapper.cs" />

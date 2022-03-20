@@ -26,11 +26,14 @@ namespace NvrOrganizer.UI.ViewModel
 
             _eventAggregator.GetEvent<OpenNvrDetailViewEvent>()
                .Subscribe(OnOpenNvrDetailView);
+            _eventAggregator.GetEvent<AfterNvrDeleteEvent>()
+                .Subscribe(AfterNvrDeleted);
 
             CreateNewNvrCommand = new DelegateCommand(OnCreateNewNvrExecute);
 
             NavigationViewModel = navigationViewModel;
         }
+
         public async Task LoadAsync()
         {
             await NavigationViewModel.LoadAsync();
@@ -69,5 +72,11 @@ namespace NvrOrganizer.UI.ViewModel
         {
             OnOpenNvrDetailView(null);
         }
+
+        private void AfterNvrDeleted(int nvrId)
+        {
+           NvrDetailViewModel = null;
+        }
+
     }
 }

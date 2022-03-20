@@ -10,5 +10,6 @@ namespace NvrOrganizer.UI.Data.Repositories
         Task SaveAsync();
         bool HasChanges();
         void Add(Nvr nvr);
+        void Remove(Nvr model);
     }
 }

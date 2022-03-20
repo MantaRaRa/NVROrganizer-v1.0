@@ -25,7 +25,8 @@ namespace NvrOrganizer.UI.ViewModel
             _eventAggregator = eventAggregator;
            
 
-            SaveCommand = new DelegateCommand(OnSaveExecute, OnSaveCanExecute); 
+            SaveCommand = new DelegateCommand(OnSaveExecute, OnSaveCanExecute);
+            DeleteCommand = new DelegateCommand(OnDeleteExecute);
          }
 
         public async Task LoadAsync(int? nvrId)
@@ -47,6 +48,11 @@ namespace NvrOrganizer.UI.ViewModel
                   }
               };
             ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
+            if (Nvr.Id == 0)
+            {
+                //Little trick to trigger the validation
+                Nvr.FirstName = "";
+            }
         }
 
         public NvrWrapper Nvr
@@ -77,6 +83,9 @@ namespace NvrOrganizer.UI.ViewModel
 
         public ICommand SaveCommand { get; }
 
+        public ICommand DeleteCommand { get; }
+
+
         private async void OnSaveExecute()
         {
           await _nvrRepository.SaveAsync();
@@ -92,6 +101,13 @@ namespace NvrOrganizer.UI.ViewModel
         private bool OnSaveCanExecute()
         {
             return Nvr != null && !Nvr.HasErrors && HasChanges;
+        }
+
+        private async void OnDeleteExecute()
+        {
+            _nvrRepository.Remove(Nvr.Model);
+           await _nvrRepository.SaveAsync();
+            _eventAggregator.GetEvent<AfterNvrDeleteEvent>().Publish(Nvr.Id);
         }
 
         private Nvr CreateNewNvr()

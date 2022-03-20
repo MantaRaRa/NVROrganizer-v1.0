@@ -4,9 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NvrOrganizer.UI" 
-        xmlns:View="clr-namespace:NvrOrganizer.UI.View" 
+        xmlns:view="clr-namespace:NvrOrganizer.UI.View" 
+        xmlns:viewModel="clr-namespace:NvrOrganizer.UI.ViewModel"
         mc:Ignorable="d"
         Title="NVR Organizer" Height="450" Width="800" FontSize="20">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:NvrDetailViewModel}">
+            <view:NvrDetailView/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,10 +27,10 @@
                 <MenuItem Header="New NVR" Command="{Binding CreateNewNvrCommand}"/>
             </MenuItem>
         </Menu>
-        <View:NavigationView Grid.Row="1"
+        <view:NavigationView Grid.Row="1"
                              DataContext="{Binding NavigationViewModel}"/>
-        <View:NvrDetailView Grid.Row="1" 
+        <ContentControl Grid.Row="1" 
                             Grid.Column="1"
-                            DataContext="{Binding NvrDetailViewModel}"/>
+                            Content="{Binding NvrDetailViewModel}"/>
     </Grid>
 </Window>

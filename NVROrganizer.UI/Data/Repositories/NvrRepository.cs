@@ -34,6 +34,11 @@ namespace NvrOrganizer.UI.Data.Repositories
             return _context.ChangeTracker.HasChanges();
         }
 
+        public void Remove(Nvr model)
+        {
+            _context.Nvrs.Remove(model);
+        }
+
         public async Task SaveAsync()
         {
             await _context.SaveChangesAsync();
